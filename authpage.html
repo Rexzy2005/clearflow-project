@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/auth.css">
+  <link href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>clearFlow | Authentication</title>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="sign-up-container">
+      <h1>Create an account</h1>
+
+      <div class="name-group">
+        <div class="input-group">
+          <label for="fname">First name</label>
+          <input type="text" name="fname" id="fname" placeholder="eg. Jane">
+        </div>
+        <div class="input-group">
+          <label for="lname">Last name</label>
+          <input type="text" name="lname" id="lname" placeholder="eg. micheal">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="eg. abc123@gmail.com">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="password-input">
+          <input type="password" name="password" id="password" placeholder="Create a strong password">
+          <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="cpassword">Confirm Password</label>
+        <div class="password-input">
+          <input type="password" placeholder="Confirm your Password">
+          <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+      </div>
+
+      <div class="acknowledge">
+        <input type="checkbox" name="accept" id="accept">
+        <label for="accept">I agree to the <a href="">terms and conditions</a> </label>
+      </div>
+
+      <button>Next</button>
+      <p>Already have an account? <a href="">login</a></p>
+    </div>
+
+    <div class="otp-container">
+        <h1>Create an account</h1>
+        <p>Please enter the OTP (one-time-password) sent to
+          your registered email adress to complete your verification.</p>
+  
+        <div class="opt-code-group">
+          <input type="number" class="code" min="0" max="9" placeholder="0" required>
+  
+          <input type="number" class="code" min="0" max="9" placeholder="0" required>
+  
+          <input type="number" class="code" min="0" max="9" placeholder="0" required>
+  
+          <input type="number" class="code" min="0" max="9" placeholder="0" required>
+  
+        </div>
+        <div class="action-group">
+          <p class="time">Remaining Time:<span> 00:59</span></p>
+          <p class="send-again">didn’t get the code? <span>Resend</span></p>
+        </div>
+  
+        <div class="button-group">
+          <button class="Verify">Verify</button>
+          <button class="cancel">Cancel</button>
+        </div>
+    </div>
+
+    <div class="login-container">
+      <h1>Sign In</h1>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="eg. abc123@gmail.com">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="password-input">
+          <input type="password" name="password" id="password" placeholder="enter your password">
+          <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+      </div>
+
+      <div class="acknowledge">
+        <div class="remember">
+          <input type="checkbox" name="accept" id="accept">
+          <label for="accept">Remember me</label>
+        </div>
+        <a href="#" class="forgotten">Forgot password?</a>
+      </div>
+
+      <button>Sign In</button>
+      <p>Already have an account? <a href="">Sign up here</a></p>
+    </div>
+
+    <!-- forgotten password -->
+    <div class="forgot-password-container">
+      <h1>Forgotten Password</h1>
+      <p>Enter your email to reset password</p>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="eg. abc123@gmail.com">
+      </div>
+
+      <button>Reset password</button>
+      <a href="" class="back">Back to Login</a>
+    </div>
+
+    <!-- reset password -->
+    <div class="reset-password-container">
+      <h1>Reset Password</h1>
+      <p>Enter your credentials to access your accout</p>
+
+
+      <div class="input-group">
+        <label for="password">New Password</label>
+        <div class="password-input">
+          <input type="password" name="password" id="password" placeholder="Create a strong password">
+          <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="cpassword">Confirm Password</label>
+        <div class="password-input">
+          <input type="password" placeholder="Confirm your Password">
+          <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="continue">Continue</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
