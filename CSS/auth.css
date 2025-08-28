@@ -181,7 +181,7 @@ body {
       background: var(--primary-color);
       color: #fff;
       padding: 10px;
-      font-size: 20px;
+      font-size: 1rem;
       font-weight: 500;
       border-radius: 10px;
       font-family: "poppins", sans-serif;
@@ -278,7 +278,7 @@ body {
         background: var(--primary-color);
         color: #fff;
         padding: 10px;
-        font-size: 20px;
+        font-size: 1rem;
         font-weight: 500;
         border-radius: 10px;
         font-family: "poppins", sans-serif;
@@ -419,7 +419,7 @@ body {
       background: var(--primary-color);
       color: #fff;
       padding: 10px;
-      font-size: 20px;
+      font-size: 1rem;
       font-weight: 500;
       border-radius: 10px;
       font-family: "poppins", sans-serif;
@@ -538,7 +538,7 @@ body {
       background: var(--primary-color);
       color: #fff;
       padding: 10px;
-      font-size: 20px;
+      font-size: 1rem;
       font-weight: 500;
       border-radius: 10px;
       font-family: "poppins", sans-serif;
@@ -669,7 +669,7 @@ body {
         background: var(--primary-color);
         color: #fff;
         padding: 10px;
-        font-size: 20px;
+        font-size: 1rem;
         font-weight: 500;
         border-radius: 10px;
         font-family: "poppins", sans-serif;
