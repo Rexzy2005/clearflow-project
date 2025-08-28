@@ -216,7 +216,7 @@ body {
 
     & p {
       font-size: 1rem;
-      font-size: 14px;
+      /* font-size: 14px; */
       opacity: .8;
       font-family: "poppins", sans-serif;
       margin-bottom: 20px;

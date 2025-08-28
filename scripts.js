@@ -3,6 +3,16 @@ const faqCards = document.querySelectorAll('.faq-card');
 let historyStack = ['signup-screen'];
 const formSections = document.querySelectorAll('.form-section');
 
+// menu UI elements
+const hambugerBtn = document.getElementById('hambuger-btn');
+const mobileLinks = document.getElementById('mobileLinks');
+
+// toggle menu js
+hambugerBtn.addEventListener('click', () => {
+    hambugerBtn.classList.toggle('openmenu');
+    mobileLinks.classList.toggle('openmenu');
+})
+
 
 
 faqCards.forEach(card => {
