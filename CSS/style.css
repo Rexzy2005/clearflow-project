@@ -47,7 +47,7 @@ header {
     top: 23px;
     left: 50%;
     transform: translateX(-50%);
-    background: #000;
+    background: #fff;
     opacity: 0.8;
     /* max-width: 800px; */
     padding: 0.5rem 0.75rem;
