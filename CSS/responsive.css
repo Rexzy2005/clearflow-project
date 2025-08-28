@@ -336,7 +336,7 @@
     background: #18181B;
 
     & .footer-container {
-      max-width: 80rem;
+      max-width: 100%;
       align-items: center;
       justify-content: center;
       flex-direction: column-reverse;
@@ -352,7 +352,7 @@
       }
 
       & ul {
-        gap: 40px;
+        gap: 20px;
 
         & li a {
           line-height: 24px;

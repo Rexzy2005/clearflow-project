@@ -47,7 +47,7 @@ header {
     top: 23px;
     left: 50%;
     transform: translateX(-50%);
-    background: #fff;
+    background: #000;
     opacity: 0.8;
     /* max-width: 800px; */
     padding: 0.5rem 0.75rem;
@@ -432,6 +432,7 @@ header {
  .footer-section{
   height: 215px;
   background: #18181B;
+  width: 100%;
   & .footer-container{
     max-width: 80rem;
     margin: 0 auto;
