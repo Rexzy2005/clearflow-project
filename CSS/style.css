@@ -167,11 +167,11 @@ header {
 }
 
 .main-section {
-  /* padding: 80px; */
+  /* padding: 0px 80px; */
 
   /* about section */
   & .about-section {
-    padding: 80px 0;
+    padding: 80px 80px;
     max-width: 80rem;
     width: 100%;
     margin: 0 auto;
@@ -224,6 +224,7 @@ header {
   /* features section */
   & .features-section{
     width: 100%;
+    padding: 88px 80px;
     background-color: #fff;
     & .features-container {
       max-width: 80rem;
@@ -287,7 +288,7 @@ header {
   }
 
   & .guide-section{
-    padding: 88px 0;
+    padding: 88px 80px;
     & .guide-container{
       max-width: 80rem;
       margin: 0 auto;
@@ -370,6 +371,7 @@ header {
   & .faq-section{
     width: 100%;
     background: #fff;
+    padding: 0 80px;
     & .faq-container{
       max-width: 80rem;
       margin: 0 auto;
@@ -423,38 +425,38 @@ header {
     }
   }
 
-  & .footer-section{
-    height: 215px;
-    background: #18181B;
-    & .footer-container{
-      max-width: 80rem;
-      margin: 0 auto;
+  
+}
+ .footer-section{
+  height: 215px;
+  background: #18181B;
+  & .footer-container{
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    padding: 30px 80px 60px 80px;
+    font-family: "inter", sans-serif;
+    & .copyright{
+      font-size: 1rem;
+      line-height: 26px;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+    & ul{
+      list-style: none;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between;
-      height: 100%;
-      padding: 30px 80px 60px 80px;
-      font-family: "inter", sans-serif;
-      & .copyright{
+      gap: 47px;
+      & li a{
         font-size: 1rem;
-        line-height: 26px;
-        font-weight: 400;
+        line-height: 24px;
+        font-weight: 500;
         color: #FFFFFF;
-      }
-      & ul{
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 47px;
-        & li a{
-          font-size: 1rem;
-          line-height: 24px;
-          font-weight: 500;
-          color: #FFFFFF;
-        }
       }
     }
   }
-
 }

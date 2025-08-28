@@ -2,87 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Form</title>
+  <title>Authentication Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       background: #f4f4f4;
     }
-    .form-container {
-      background: #fff;
+    .container {
+      width: 350px;
       padding: 20px;
+      background: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px;
     }
-    .form-group {
-      position: relative;
-      margin-bottom: 20px;
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
     }
-    .form-group input {
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    input {
       width: 100%;
-      padding: 10px 40px 10px 10px;
-      font-size: 16px;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .toggle-password {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 18px;
-      color: #666;
     }
     button {
       width: 100%;
       padding: 10px;
+      background: #333;
+      color: #fff;
       border: none;
-      border-radius: 6px;
-      background: #007bff;
-      color: white;
-      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
+      margin-top: 8px;
     }
     button:hover {
-      background: #0056b3;
+      background: #555;
+    }
+    .link {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .link a {
+      color: blue;
+      cursor: pointer;
+    }
+    .back-btn {
+      background: #999;
+      margin-top: 10px;
     }
   </style>
-  <!-- Font Awesome for icons -->
 </head>
 <body>
 
-  <div class="form-container">
-    <h2>Signup</h2>
-    <form>
-      <div class="form-group">
-        <input type="password" id="password" placeholder="Enter Password">
-        <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
-      </div>
-      <button type="submit">Signup</button>
-    </form>
+<div class="container">
+
+  <!-- Sign In -->
+  <div id="signin" class="section active">
+    <h2>Sign In</h2>
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Sign In</button>
+    <div class="link">
+      <a onclick="showSection('signup')">Don't have an account? Sign Up</a><br>
+      <a onclick="showSection('forgot')">Forgot Password?</a>
+    </div>
   </div>
 
-  <script>
-    const passwordInput = document.getElementById("password");
-    const togglePassword = document.getElementById("togglePassword");
+  <!-- Sign Up -->
+  <div id="signup" class="section">
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button onclick="showSection('otp')">Sign Up</button>
+    <div class="link">
+      <a onclick="showSection('signin')">Already have an account? Sign In</a>
+    </div>
+    <button class="back-btn" onclick="goBack()">Back</button>
+  </div>
 
-    togglePassword.addEventListener("click", () => {
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
+  <!-- Forgot Password -->
+  <div id="forgot" class="section">
+    <h2>Forgot Password</h2>
+    <input type="email" placeholder="Enter your email">
+    <button onclick="showSection('newpassword')">Proceed</button>
+    <button class="back-btn" onclick="goBack()">Back</button>
+  </div>
 
-      // Toggle eye / eye-slash icon
-      togglePassword.classList.toggle("fa-eye");
-      togglePassword.classList.toggle("fa-eye-slash");
-    });
-  </script>
+  <!-- New Password -->
+  <div id="newpassword" class="section">
+    <h2>New Password</h2>
+    <input type="password" placeholder="New Password">
+    <input type="password" placeholder="Confirm Password">
+    <button>Reset Password</button>
+    <button class="back-btn" onclick="goBack()">Back</button>
+  </div>
+
+  <!-- OTP -->
+  <div id="otp" class="section">
+    <h2>Enter OTP</h2>
+    <input type="text" placeholder="Enter OTP">
+    <button>Verify</button>
+    <button class="back-btn" onclick="goBack()">Back</button>
+  </div>
+
+</div>
+
+<script>
+  let historyStack = ['signin']; // default starting section
+
+  function showSection(sectionId) {
+    // Hide all
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    // Show selected
+    document.getElementById(sectionId).classList.add('active');
+    // Push to history
+    historyStack.push(sectionId);
+  }
+
+  function goBack() {
+    if (historyStack.length > 1) {
+      historyStack.pop(); // remove current
+      let prev = historyStack[historyStack.length - 1];
+      showSection(prev);
+      historyStack.pop(); // prevent duplicate push
+    }
+  }
+</script>
 
 </body>
 </html>

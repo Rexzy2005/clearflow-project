@@ -18,7 +18,8 @@
 
 <body>
   <div class="auth-container">
-    <div class="sign-up-container">
+    <!-- sign-up-container -->
+    <div id="signup-screen" class="sign-up-container form-section active">
       <h1>Create an account</h1>
 
       <div class="name-group">
@@ -57,37 +58,37 @@
         <label for="accept">I agree to the <a href="">terms and conditions</a> </label>
       </div>
 
-      <button>Next</button>
-      <p>Already have an account? <a href="">login</a></p>
+      <button type="submit" onclick="showSection('otp-screen')">Next</button>
+      <p>Already have an account? <a onclick="showSection('login-screen')">login</a></p>
     </div>
+    <!-- otp-container -->
+    <div id="otp-screen" class="otp-container form-section">
+      <h1>Create an account</h1>
+      <p>Please enter the OTP (one-time-password) sent to
+        your registered email adress to complete your verification.</p>
 
-    <div class="otp-container">
-        <h1>Create an account</h1>
-        <p>Please enter the OTP (one-time-password) sent to
-          your registered email adress to complete your verification.</p>
-  
-        <div class="opt-code-group">
-          <input type="number" class="code" min="0" max="9" placeholder="0" required>
-  
-          <input type="number" class="code" min="0" max="9" placeholder="0" required>
-  
-          <input type="number" class="code" min="0" max="9" placeholder="0" required>
-  
-          <input type="number" class="code" min="0" max="9" placeholder="0" required>
-  
-        </div>
-        <div class="action-group">
-          <p class="time">Remaining Time:<span> 00:59</span></p>
-          <p class="send-again">didn’t get the code? <span>Resend</span></p>
-        </div>
-  
-        <div class="button-group">
-          <button class="Verify">Verify</button>
-          <button class="cancel">Cancel</button>
-        </div>
+      <div class="opt-code-group">
+        <input type="number" class="code" min="0" max="9" placeholder="0" required>
+
+        <input type="number" class="code" min="0" max="9" placeholder="0" required>
+
+        <input type="number" class="code" min="0" max="9" placeholder="0" required>
+
+        <input type="number" class="code" min="0" max="9" placeholder="0" required>
+
+      </div>
+      <div class="action-group">
+        <p class="time">Remaining Time:<span> 00:59</span></p>
+        <p class="send-again">didn’t get the code? <span>Resend</span></p>
+      </div>
+
+      <div class="button-group">
+        <button class="Verify" onclick="showSection('login-screen')">Verify</button>
+        <button class="cancel" onclick="goBack()">Cancel</button>
+      </div>
     </div>
-
-    <div class="login-container">
+    <!-- login-container -->
+    <div id="login-screen" class="login-container form-section">
       <h1>Sign In</h1>
       <div class="input-group">
         <label for="email">Email Address</label>
@@ -107,15 +108,15 @@
           <input type="checkbox" name="accept" id="accept">
           <label for="accept">Remember me</label>
         </div>
-        <a href="#" class="forgotten">Forgot password?</a>
+        <a onclick="showSection('fogottenpw-screen')" class="forgotten">Forgot password?</a>
       </div>
 
       <button>Sign In</button>
-      <p>Already have an account? <a href="">Sign up here</a></p>
+      <p>Already have an account? <a onclick="showSection('signup-screen')">Sign up here</a></p>
     </div>
 
     <!-- forgotten password -->
-    <div class="forgot-password-container">
+    <div id="fogottenpw-screen" class="forgot-password-container form-section">
       <h1>Forgotten Password</h1>
       <p>Enter your email to reset password</p>
       <div class="input-group">
@@ -123,12 +124,12 @@
         <input type="email" name="email" id="email" placeholder="eg. abc123@gmail.com">
       </div>
 
-      <button>Reset password</button>
-      <a href="" class="back">Back to Login</a>
+      <button onclick="showSection('resetpw-screen')">Reset password</button>
+      <a onclick="goBack()" class="back">Back to Login</a>
     </div>
 
     <!-- reset password -->
-    <div class="reset-password-container">
+    <div id="resetpw-screen" class="reset-password-container form-section">
       <h1>Reset Password</h1>
       <p>Enter your credentials to access your accout</p>
 
@@ -150,10 +151,11 @@
 
       <div class="button-group">
         <button class="continue">Continue</button>
-        <button class="cancel">Cancel</button>
+        <button class="cancel" onclick="goBack()">Cancel</button>
       </div>
     </div>
   </div>
+  <script src="scripts.js"></script>
 </body>
 
 </html>

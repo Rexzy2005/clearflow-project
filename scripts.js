@@ -1,18 +1,9 @@
 const faqCards = document.querySelectorAll('.faq-card');
-const codes = document.querySelectorAll('.code');
+// auth section Ui element
+let historyStack = ['signup-screen'];
+const formSections = document.querySelectorAll('.form-section');
 
-codes[0].focus()
 
-codes.forEach((code, index) => {
-  code.addEventListener('keydown', (e) => {
-    if(e.key >= 0 && e.key <= 9){
-      codes[index].value = ''
-      setTimeout(() => codes[index + 1].focus(), 10);
-    } else if(e.key === "Backspace"){
-      setTimeout(() => codes[index - 1].focus(), 10)
-    }
-  })
-});
 
 faqCards.forEach(card => {
   const question = card.querySelector('.faq-question');
@@ -21,13 +12,14 @@ faqCards.forEach(card => {
 
   question.addEventListener('click', () => {
     const isOpen = answer.style.display === "block";
+    answer.style.transition = "display .5s ease-in-out";
 
     // Close all FAQs if you want accordion style
     faqCards.forEach(c => {
       c.querySelector('.answer').style.display = "none";
       c.querySelector('i').classList.replace('fa-minus', 'fa-plus');
     });
-
+    
     if (isOpen) {
       answer.style.display = "none";
       icon.classList.replace('fa-minus', 'fa-plus');
@@ -37,3 +29,39 @@ faqCards.forEach(card => {
     }
   });
 });
+
+// auth screen js functionalities
+function setActiveSection(id){
+  formSections.forEach(section => section.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function showSection(sectionId){
+  // const currentSection = historyStack[historyStack.length - 1];
+  // if(currentSection)
+  setActiveSection(sectionId)
+  historyStack.push(sectionId);
+}
+
+function goBack() {
+
+}
+
+
+
+
+
+
+// const codes = document.querySelectorAll('.code');
+
+// codes[0].focus()
+
+// codes.forEach((code, index) => {
+//   code.addEventListener('keydown', (e) => {
+//     if(e.key >= 0 && e.key <= 9){
+//       codes[index].value = ''
+//       setTimeout(() => codes[index + 1].focus(), 10);
+//     } else if(e.key === "Backspace"){
+//       setTimeout(() => codes[index - 1].focus(), 10)
+//     }
+//   })
+// });
