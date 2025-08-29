@@ -12,6 +12,8 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     padding: 10px;
+    max-height: 650px;
+
 
     /* otp */
     & .otp-container {

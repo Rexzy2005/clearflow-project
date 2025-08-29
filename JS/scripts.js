@@ -1,19 +1,7 @@
 const faqCards = document.querySelectorAll('.faq-card');
 // auth section Ui element
-let historyStack = ['signup-screen'];
+let historyStack = [];
 const formSections = document.querySelectorAll('.form-section');
-
-// menu UI elements
-const hambugerBtn = document.getElementById('hambuger-btn');
-const mobileLinks = document.getElementById('mobileLinks');
-
-// toggle menu js
-hambugerBtn.addEventListener('click', () => {
-    hambugerBtn.classList.toggle('openmenu');
-    mobileLinks.classList.toggle('openmenu');
-})
-
-
 
 faqCards.forEach(card => {
   const question = card.querySelector('.faq-question');
@@ -29,7 +17,7 @@ faqCards.forEach(card => {
       c.querySelector('.answer').style.display = "none";
       c.querySelector('i').classList.replace('fa-minus', 'fa-plus');
     });
-    
+
     if (isOpen) {
       answer.style.display = "none";
       icon.classList.replace('fa-minus', 'fa-plus');
@@ -41,37 +29,29 @@ faqCards.forEach(card => {
 });
 
 // auth screen js functionalities
-function setActiveSection(id){
+function setActiveSection(id) {
   formSections.forEach(section => section.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-function showSection(sectionId){
-  // const currentSection = historyStack[historyStack.length - 1];
-  // if(currentSection)
+function showSection(sectionId) {
   setActiveSection(sectionId)
   historyStack.push(sectionId);
 }
 
 function goBack() {
-
+  if (historyStack.length > 1) {
+    historyStack.pop();
+    let prev = historyStack[historyStack.length - 1];
+    showSection(prev);
+    historyStack.pop();
+  }
 }
-
-
-
-
-
-
-// const codes = document.querySelectorAll('.code');
-
-// codes[0].focus()
-
-// codes.forEach((code, index) => {
-//   code.addEventListener('keydown', (e) => {
-//     if(e.key >= 0 && e.key <= 9){
-//       codes[index].value = ''
-//       setTimeout(() => codes[index + 1].focus(), 10);
-//     } else if(e.key === "Backspace"){
-//       setTimeout(() => codes[index - 1].focus(), 10)
-//     }
-//   })
-// });
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const mode = params.get("mode");
+  if (mode) {
+    showSection(mode);
+  } else {
+    showSection("signup");
+  }
+});

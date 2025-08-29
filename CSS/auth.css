@@ -36,7 +36,7 @@ body {
   border-radius: 30px;
   background: #fff;
   padding: 25px;
-  overflow: auto;
+  /* overflow: auto; */
   scrollbar-width: none;
   display: flex;
   align-items: center;
@@ -53,18 +53,31 @@ body {
     background: green;
   } */
 
-  & .form-section{
+  & .form-section {
     display: none;
   }
+
   & .form-section.active {
-      display: flex;
-    }
+    display: flex;
+  }
+
+ 
+
+  & .success {
+    border-color: #2ecc71;
+  }
+
+  & .success-small {
+    visibility: visible;
+    border-color: #e74c3c;
+  }
+
   /* sign up */
   & .sign-up-container {
     text-align: center;
     /* display: none; */
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
     width: 100%;
 
     & h1 {
@@ -87,8 +100,9 @@ body {
       align-items: flex-start;
       justify-content: center;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       width: 100%;
+      /* position: relative; */
 
       & label {
         font-size: 1rem;
@@ -117,6 +131,11 @@ body {
           color: #121212;
           opacity: .5;
         }
+      }
+
+      & small {
+        display: none;
+        font-size: 12px;
       }
 
       & .password-input {
@@ -158,6 +177,8 @@ body {
           outline-offset: 2px;
         }
       }
+
+
 
     }
 
@@ -224,15 +245,27 @@ body {
       & span {
         color: var(--primary-color);
       }
+      & button {
+        color: var(--primary-color);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        &:disabled{
+          cursor: not-allowed;
+        }
+      }
     }
-    & .opt-code-group{
+
+    & .opt-code-group {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
       width: 100%;
       margin-bottom: 30px;
-      & input{
+
+      & input {
         caret-color: transparent;
         border-radius: 5px;
         font-size: 75px;
@@ -241,21 +274,22 @@ body {
         border: 1px solid #000000A6;
         text-align: center;
         font-weight: 300;
-        -moz-appearance: textfield;
         outline: none;
 
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button{
+        /* &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
           -webkit-appearance: none;
           margin: 0;
-        }
-        &:valid{
+        } */
+
+        &:valid {
           border-color: #2b59ff9a;
           box-shadow: 0 10px -5px #2b59ff9a;
         }
       }
     }
-    & .action-group{
+
+    & .action-group {
       display: flex;
       align-items: center;
       justify-content: space-between;

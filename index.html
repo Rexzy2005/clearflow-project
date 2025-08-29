@@ -27,12 +27,14 @@
       <ul class="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#guide">Guide</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
       <div class="nav-btns">
-        <a href="authpage.html" class="cta-btn login">Login</a>
-        <a href="authpage.html" class="cta-btn sign-up">Get Started Free</a>
+        <a href="auth.html?mode=login" class="cta-btn login">Login</a>
+        <a href="auth.html?mode=signup" class="cta-btn sign-up">Get Started Free</a>
       </div>
 
       <div class="hambuger-menu" id="hambuger-btn">
@@ -42,17 +44,19 @@
       </div>
     </nav>
     <div class="mobile-links" id="mobileLinks">
-        <ul class="mobile-navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+      <ul class="mobile-navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#guide">Guide</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
 
-        <div class="mobile-nav-btns">
-          <a href="authpage.html" class="cta-btn login">Login</a>
-          <a href="authpage.html" class="cta-btn sign-up">Get Started Free</a>
-        </div>
+      <div class="mobile-nav-btns">
+        <a href="auth.html?mode=login" class="cta-btn login">Login</a>
+        <a href="auth.html?mode=signup" class="cta-btn sign-up">Get Started Free</a>
       </div>
+    </div>
 
     <!-- hero section -->
     <div class="hero-section" id="home">
@@ -68,12 +72,12 @@
   </header>
 
   <main class="main-section">
-    <section class="about-section">
-      <div class="about-container" id="about">
+    <section class="about-section" id="about">
+      <div class="about-container" >
         <h2>About Us</h2>
         <div class="about-contents">
           <div class="left-column">
-            <p class="text-top">Founded in 2025 by a team of engineers and AI specialists, SAK emerged from a simple
+            <p class="text-top">Founded in 2025 by a team of engineers and AI specialists, ClearFlow emerged from a simple
               mission: making clean, safe water accessible to everyone through intelligent technology. We've
               revolutionized water purification by combining IoT sensors, artificial intelligence, and sustainable
               engineering practices.</p>
@@ -88,8 +92,8 @@
       </div>
     </section>
 
-    <section class="features-section">
-      <div class="features-container" id="features">
+    <section class="features-section" id="features">
+      <div class="features-container">
         <h2>Our Features</h2>
 
         <div class="cards-container">
@@ -118,9 +122,9 @@
       </div>
     </section>
 
-    <section class="guide-section">
-      <div class="guide-container" id="guide">
-        <h2>SAK helps you ingest <br> clean water</h2>
+    <section class="guide-section" id="guide">
+      <div class="guide-container" >
+        <h2>ClearFlow helps you ingest <br> clean water</h2>
 
         <div class="guide-wrapper">
           <div class="steps-wrapper">
@@ -132,7 +136,7 @@
               </div>
               <div class="step-details">
                 <h6>Buy the device</h6>
-                <p>Purchase the SAK purifying and Cleaning device and</p>
+                <p>Purchase the ClearFlow purifying and Cleaning device and</p>
               </div>
             </div>
             <div class="card step2">
@@ -142,8 +146,8 @@
                 </div>
               </div>
               <div class="step-details">
-                <h6>Buy the device</h6>
-                <p>Purchase the SAK purifying and Cleaning device and</p>
+                <h6>Install the device</h6>
+                <p>we come help you set up and and install your device at your venue</p>
               </div>
             </div>
             <div class="card step2">
@@ -153,8 +157,8 @@
                 </div>
               </div>
               <div class="step-details">
-                <h6>Buy the device</h6>
-                <p>Purchase the SAK purifying and Cleaning device and</p>
+                <h6>Start drinking clean water</h6>
+                <p>Enjoy drinking a clean and pure water and prevent health issues</p>
               </div>
             </div>
           </div>
@@ -165,7 +169,7 @@
       </div>
     </section>
 
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
       <div class="faq-container">
         <h2>FAQ</h2>
 
@@ -180,7 +184,7 @@
           </div>
           <div class="faq-card">
             <div class="faq-question">
-              <p>What contaminants can SAK detect?</p>
+              <p>What contaminants can ClearFlow detect?</p>
               <i class="fa-solid fa-plus"></i>
             </div>
             <p class="answer">We serve institutions: NGOs, government boards, rural clinics, schools and individual
@@ -221,7 +225,8 @@
     </div>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script src="JS/scripts.js"></script>
+  <script src="JS/toggleMenu.js"></script>
 </body>
 
 </html>
