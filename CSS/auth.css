@@ -41,17 +41,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* &::-webkit-scrollbar{
-    width: 2px;
+  position: relative;
+
+  & .backIcon{
+    width: 35px;
+    height: 35px;
+    background: #eee;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    place-content: center;
+
+    & i{
+      font-size: 1rem;
+    }
   }
-  &::-webkit-scrollbar-thumb{
-    width: 2px;
-    background: red;
-  }
-  &::-webkit-scrollbar-track{
-    width: 2px;
-    background: green;
-  } */
+  
 
   & .form-section {
     display: none;
