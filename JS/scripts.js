@@ -47,9 +47,9 @@ function showSection(sectionId, pushToHistory = true) {
   }
 }
 
-// function goBack() {
-//   window.history.back();
-// }
+function goBack() {
+  window.history.back();
+}
 
 
 document.getElementById("back-btn").addEventListener("click", () => {
