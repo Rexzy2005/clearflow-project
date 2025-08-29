@@ -9,6 +9,7 @@ const fnameHint = document.getElementById('fname-hint'),
   femailHint = document.getElementById('femail-hint'),
   npassHint = document.getElementById('npass-hint'),
   cnpassHint = document.getElementById('cnpass-hint'),
+  loginHint = document.getElementById('login-hint'),
   signupConfirmPasswordHint = document.getElementById('signupConfirmPassword-hint');
 
 function isValidEmail(email) {
@@ -75,17 +76,17 @@ resendBtn.addEventListener('click', () => {
 // email setup start
 function sendOTP(userEmail, otp) {
   emailjs.send("service_4028v7s", "template_8jjcuos", {
-      to_email: userEmail,
-      otp: otp              
+    to_email: userEmail,
+    otp: otp
   })
-  .then(() => {
+    .then(() => {
       console.log("✅ OTP sent to " + userEmail);
       alert("OTP has been sent to your email!");
-  })
-  .catch((err) => {
+    })
+    .catch((err) => {
       console.error("❌ Error sending email:", err);
       alert("Failed to send OTP. Try again!");
-  });
+    });
 }
 
 // email setup end
@@ -241,7 +242,7 @@ otpInputs.forEach((input, index) => {
 
 // ===== OTP Submit Validation =====
 window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("otp1").focus();
+  document.getElementById("otp1").focus();
 });
 document.getElementById("otp").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -260,7 +261,7 @@ document.getElementById("otp").addEventListener("submit", function (e) {
   });
 
   if (enteredOTP === currentOTP) {
-    alert("✅ OTP Verified Successfully!");
+    alert("OTP Verified Successfully!");
     showSection("login");
 
     // stop otp generation
@@ -287,18 +288,30 @@ document.getElementById("login").addEventListener("submit", function (e) {
   const password = document.getElementById("lpassword");
 
   if (!isValidEmail(email.value.trim())) {
-    showError(email, "Enter a valid email");
+    loginHint.style.color = "#e74c3c"
+    loginHint.textContent = "All fields must be filled"
+    loginHint.style.display = "block"
+    email.style.border = "2px solid #e74c3c";
     valid = false;
-  } else showSuccess(email);
+  } else {
+    loginHint.style.display = "none";
+    email.style.border = "2px solid #2ecc71";
+  }
 
   if (password.value.trim() === "") {
-    showError(password, "Password required");
+    loginHint.style.color = "#e74c3c"
+    loginHint.textContent = "All fields must be filled"
+    loginHint.style.display = "block"
+    password.parentElement.style.border = "2px solid #e74c3c";
     valid = false;
-  } else showSuccess(password);
+  } else {
+    loginHint.style.display = "none";
+    email.style.border = "2px solid #2ecc71";
+  }
 
   if (valid) {
     alert("Login successful!");
-    // redirect to dashboard here
+    window.location.href = "dashboard.html"; 
   }
 });
 
@@ -338,7 +351,7 @@ document.getElementById("resetpassword").addEventListener("submit", function (e)
     npassHint.style.display = "none";
     npassword.parentElement.style.border = "2px solid #2ecc71"
   }
-  
+
   if (cnpassword.value.trim() !== npassword.value.trim() || cnpassword.value.trim() === "") {
     npassHint.style.display = "block";
     npassHint.style.color = "#e74c3c";
@@ -350,7 +363,7 @@ document.getElementById("resetpassword").addEventListener("submit", function (e)
     cnpassword.parentElement.style.border = "2px solid #2ecc71"
 
   }
-  
+
   if (valid) {
     npassHint.style.display = "none";
     npassHint.style.color = "#2ecc71";

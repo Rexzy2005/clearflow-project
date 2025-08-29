@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/auth.css">
-    <link rel="stylesheet" href="CSS/authresponsive.css">
-    <link href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700" rel="stylesheet" />
-    <link
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/auth.css">
+  <link rel="stylesheet" href="CSS/authresponsive.css">
+  <link href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700" rel="stylesheet" />
+  <link
     href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
     rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <title>clearFlow | Authentication</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <title>clearFlow | Authentication</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
   <div class="auth-container">
-    <div class="backIcon" onclick="goBack()" id="back-btn">
+    <div class="backIcon" id="back-btn">
       <i class="fa-solid fa-arrow-left"></i>
     </div>
     <!-- sign-up-container -->
@@ -102,6 +102,7 @@
     <!-- login-container -->
     <form id="login" class="login-container form-section">
       <h1>Sign In</h1>
+      <small id="login-hint"></small>
       <div class="input-group">
         <label for="lemail">Email Address</label>
         <input type="email" name="lemail" id="lemail" placeholder="eg. abc123@gmail.com">
