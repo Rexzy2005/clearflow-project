@@ -14,6 +14,10 @@ body {
   width: 100%;
   background: #fafafa;
 }
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 html{
   scroll-behavior: smooth;
 }
